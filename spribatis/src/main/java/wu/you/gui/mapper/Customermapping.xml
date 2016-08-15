@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+    
+<mapper namespace="spribatis.UserDao">  
+  
+   <!-- <cache />  
+      
+      <resultMap type="User" id="resultListUser">  
+        <id column="uid" property="uid" />  
+        <result column="userName" property="userName"/>  
+        <result column="password" property="password" />  
+    </resultMap> -->
+      
+    <select id="queryById" resultType="wu.you.gui.dto.Customer" parameterType="int">  
+    select first_name from customer where customer_id=#{customer_id}
+    </select>  
+      
+    <insert id="save" parameterType="wu.you.gui.dto.Customer" useGeneratedKeys="true" >  
+            insert into customer(store_id,first_name,last_name,email,address_id,create_date) values(#{store_id},#{first_name},#{last_name},#{email},#{address_id},#{create_date})   
+    </insert>  
+      
+    <update id="update" parameterType="wu.you.gui.dto.Customer">  
+    </update>  
+      
+    <delete id="delete" parameterType="int">  
+    </delete>  
+      
+    <select id="queryAll" resultType="wu.you.gui.dto.Customer">  
+        SELECT * FROM Customer  
+    </select>  
+</mapper>  

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+    
+<mapper namespace="spribatis.UserDao">  
+  
+   <!-- <cache />  
+      
+      <resultMap type="User" id="resultListUser">  
+        <id column="uid" property="uid" />  
+        <result column="userName" property="userName"/>  
+        <result column="password" property="password" />  
+    </resultMap> -->
+      
+    <select id="queryById" resultType="wu.you.gui.dto.Address" parameterType="int">  
+        SELECT * FROM address  WHERE address_id=#{id}  
+    </select>  
+      
+    <insert id="save" parameterType="wu.you.gui.dto.Address" useGeneratedKeys="true" >  
+    </insert>  
+      
+    <update id="update" parameterType="wu.you.gui.dto.Address">  
+    </update>  
+      
+    <delete id="delete" parameterType="int">  
+    </delete>  
+      
+    <select id="queryAll" resultType="wu.you.gui.dto.Address">  
+        SELECT * FROM Address  
+    </select>  
+</mapper>  
