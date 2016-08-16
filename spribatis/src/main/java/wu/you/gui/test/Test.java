@@ -111,7 +111,7 @@ public class Test {
 	            String s3 = sc3.nextLine();
 	            int i = Integer.parseInt(s3);
 //	            Address u1 = testQueryById(i);
-	            if(i<1||i>30){
+	            if(i<1||i>600){
 	            	System.out.println("请输入存在的address_id");
 	            }else{
 	            	u.setAddress_id(i);
