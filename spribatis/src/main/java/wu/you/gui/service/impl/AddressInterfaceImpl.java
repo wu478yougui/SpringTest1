@@ -5,34 +5,33 @@ import java.util.List;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
 import wu.you.gui.dto.Address;
-import wu.you.gui.dto.User;
 import wu.you.gui.service.AddressInterFace;
 
 public class AddressInterfaceImpl extends SqlSessionDaoSupport implements AddressInterFace {
 
-	public Address queryById(int id) {
+	public Address address_queryById(int id) {
 		// TODO Auto-generated method stub
-		return this.getSqlSession().selectOne("queryById",id);
+		return this.getSqlSession().selectOne("address_queryById",id);
 		
 	}
 
 
-	public void delete(int id) {
+	public void address_delete(int id) {
 		// TODO Auto-generated method stub
 
 	}
 
-	public List<Address> queryAll() {
+	public List<Address> address_queryAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public void save(Address u) {
+	public void address_save(Address u) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void update(Address u) {
+	public void address_update(Address u) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -3,16 +3,15 @@ package wu.you.gui.service;
 import java.util.List;
 
 import wu.you.gui.dto.Address;
-import wu.you.gui.dto.User;
 
 public interface AddressInterFace {
-public Address queryById(int id);  
+public Address address_queryById(int id);  
     
-    public void save(Address u);  
+    public void address_save(Address u);  
       
-    public void update(Address u);  
+    public void address_update(Address u);  
       
-    public void delete(int id);  
+    public void address_delete(int id);  
       
-    public List<Address> queryAll();  
+    public List<Address> address_queryAll();  
 }

@@ -10,29 +10,33 @@ import wu.you.gui.service.CustomerInterface;
 public class CustomerInterfaceImpl extends SqlSessionDaoSupport implements CustomerInterface {
 
 
-	public void delete(int id) {
+	public void customer_delete(int id) {
 		// TODO Auto-generated method stub
 
 	}
 
-	public Customer queryById(int id) {
+	public Customer customer_queryById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public void save(Customer u) {
+	public void customer_save(Customer u) {
 		this.getSqlSession().insert("save", u);
 		
 	}
 
-	public void update(Customer u) {
+	public void customer_update(Customer u) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public List<Customer> queryAll() {
+	
+
+	public List<Customer> customer_queryAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 }

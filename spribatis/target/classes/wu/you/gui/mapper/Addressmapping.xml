@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
     
-<mapper namespace="spribatis.UserDao">  
+<mapper namespace="wu.you.gui.dto.*">  
   
    <!-- <cache />  
       
@@ -13,20 +13,20 @@
         <result column="password" property="password" />  
     </resultMap> -->
       
-    <select id="queryById" resultType="wu.you.gui.dto.Address" parameterType="int">  
+    <select id="address_queryById" resultType="wu.you.gui.dto.Address" parameterType="int">  
         SELECT * FROM address  WHERE address_id=#{id}  
     </select>  
       
-    <insert id="save" parameterType="wu.you.gui.dto.Address" useGeneratedKeys="true" >  
+    <insert id="address_save" parameterType="wu.you.gui.dto.Address" useGeneratedKeys="true" >  
     </insert>  
       
-    <update id="update" parameterType="wu.you.gui.dto.Address">  
+    <update id="address_update" parameterType="wu.you.gui.dto.Address">  
     </update>  
       
-    <delete id="delete" parameterType="int">  
+    <delete id="address_delete" parameterType="int">  
     </delete>  
       
-    <select id="queryAll" resultType="wu.you.gui.dto.Address">  
+    <select id="address_queryAll" resultType="wu.you.gui.dto.Address">  
         SELECT * FROM Address  
     </select>  
 </mapper>  

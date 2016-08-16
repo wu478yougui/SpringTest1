@@ -5,13 +5,13 @@ import java.util.List;
 import wu.you.gui.dto.Store;
 
 public interface StoreInterface {
-public Store queryById(int id);  
+public Store store_queryById(int id);  
     
-    public void save(Store u);  
+    public void store_save(Store u);  
       
-    public void update(Store u);  
+    public void store_update(Store u);  
       
-    public void delete(int id);  
+    public void store_delete(int id);  
       
-    public List<Store> queryAll();  
+    public List<Store> store_queryAll();  
 }

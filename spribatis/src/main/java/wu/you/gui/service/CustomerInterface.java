@@ -5,13 +5,13 @@ import java.util.List;
 import wu.you.gui.dto.Customer;
 
 public interface CustomerInterface {
-public Customer queryById(int id);  
+public Customer customer_queryById(int id);  
     
-    public void save(Customer u);  
+    public void customer_save(Customer u);  
       
-    public void update(Customer u);  
+    public void customer_update(Customer u);  
       
-    public void delete(int id);  
+    public void customer_delete(int id);  
       
-    public List<Customer> queryAll();  
+    public List<Customer> customer_queryAll();  
 }

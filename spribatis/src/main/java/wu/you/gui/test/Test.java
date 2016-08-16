@@ -13,10 +13,8 @@ import org.springframework.core.io.Resource;
 
 import wu.you.gui.dto.Address;
 import wu.you.gui.dto.Customer;
-import wu.you.gui.dto.User;
 import wu.you.gui.service.AddressInterFace;
 import wu.you.gui.service.CustomerInterface;
-import wu.you.gui.service.UserDao;
 import wu.you.gui.service.impl.AddressInterfaceImpl;
 import wu.you.gui.service.impl.CustomerInterfaceImpl;
 
@@ -57,7 +55,7 @@ public class Test {
 	      
 	   
 	    public static Address testQueryById(int i){  
-	    	Address u = address.queryById(i);  
+	    	Address u = address.address_queryById(i);  
 	        if(u!= null){  
 	        	System.out.println(u);  
 	        }
@@ -71,7 +69,7 @@ public class Test {
 	            u.setStore_id(1);
 	            
 	            while(true){
-	            	
+	            System.out.println("请输入first_name");
 	            Scanner  sc = new Scanner(System.in);
 	            String s = sc.nextLine();
 	            
@@ -84,6 +82,7 @@ public class Test {
 	            }
 	            
 	            while(true){
+	            System.out.println("请输入last_name");
 	            Scanner  sc1 = new Scanner(System.in);
 	            String s1 = sc1.nextLine();
 	            if(!(s1.matches("[a-zA-Z]+"))){
@@ -95,6 +94,7 @@ public class Test {
 	            
 	            }
 	            while(true){
+	            System.out.println("请输入邮箱地址");
 	            Scanner  sc2 = new Scanner(System.in);
 	            String email = sc2.nextLine();
 	            if(!(email.matches("^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$"))){
@@ -107,11 +107,12 @@ public class Test {
 	            
 	            
 	            while(true){
+	            System.out.println("请输入address_id");
 	            Scanner  sc3 = new Scanner(System.in);
 	            String s3 = sc3.nextLine();
 	            int i = Integer.parseInt(s3);
-//	            Address u1 = testQueryById(i);
-	            if(i<1||i>600){
+	            Address u1 = testQueryById(i);
+	            if(u1==null){
 	            	System.out.println("请输入存在的address_id");
 	            }else{
 	            	u.setAddress_id(i);
@@ -122,7 +123,7 @@ public class Test {
 	            
 	            u.setCreate_date(new Date());
 	            
-	            customer.save(u);  
+	            customer.customer_save(u);  
 	        System.out.println("保存成功！");  
 	    }  
 	      

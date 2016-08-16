@@ -3,9 +3,11 @@
 <configuration>  
     <typeAliases>  
         <typeAlias alias="Customer" type="wu.you.gui.dto.Customer"/> 
+        <typeAlias alias="Address" type="wu.you.gui.dto.Address"/>
     </typeAliases> 
     <!-- 指定映射文件 -->  
     <mappers>  
-        <mapper resource="wu/you/gui/mapper/Customermapping.xml" />  
+        <mapper resource="wu/you/gui/mapper/Customermapping.xml" />
+        <mapper resource="wu/you/gui/mapper/Addressmapping.xml"/>  
     </mappers>  
 </configuration> 

@@ -10,27 +10,27 @@ import wu.you.gui.service.CountryInterface;
 public class CountryInterfaceImpl extends SqlSessionDaoSupport implements CountryInterface {
 
 
-	public void delete(int id) {
+	public void country_delete(int id) {
 		// TODO Auto-generated method stub
 
 	}
 
-	public Country queryById(int id) {
+	public Country country_queryById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public void save(Country u) {
+	public void country_save(Country u) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void update(Country u) {
+	public void country_update(Country u) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public List<Country> queryAll() {
+	public List<Country> country_queryAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
     
-<mapper namespace="spribatis.UserDao">  
+<mapper namespace="wu.you.gui.dto.*">  
   
    <!-- <cache />  
       
@@ -13,7 +13,7 @@
         <result column="password" property="password" />  
     </resultMap> -->
       
-    <select id="queryById" resultType="wu.you.gui.dto.City" parameterType="int">  
+    <select id="city_queryById" resultType="wu.you.gui.dto.City" parameterType="int">  
         SELECT  
         UID,  
         USERNAME,  
@@ -22,20 +22,20 @@
         WHERE UID = #{id}  
     </select>  
       
-    <insert id="save" parameterType="wu.you.gui.dto.City" useGeneratedKeys="true" keyProperty="uid">  
+    <insert id="city_save" parameterType="wu.you.gui.dto.City" useGeneratedKeys="true" keyProperty="uid">  
             insert into  
             City(userName,password) values(#{userName},#{password})   
     </insert>  
       
-    <update id="update" parameterType="wu.you.gui.dto.City">  
+    <update id="city_update" parameterType="wu.you.gui.dto.City">  
         UPDATE City SET USERNAME=#{userName},PASSWORD=#{password} WHERE UID=#{uid}  
     </update>  
       
-    <delete id="delete" parameterType="int">  
+    <delete id="city_delete" parameterType="int">  
         DELETE FROM City WHERE UID=#{id}  
     </delete>  
       
-    <select id="queryAll" resultType="wu.you.gui.dto.City">  
+    <select id="city_queryAll" resultType="wu.you.gui.dto.City">  
         SELECT * FROM City  
     </select>  
 </mapper>  

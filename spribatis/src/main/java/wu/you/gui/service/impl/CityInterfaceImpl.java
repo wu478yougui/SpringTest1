@@ -10,27 +10,27 @@ import wu.you.gui.service.CityInterface;
 public class CityInterfaceImpl extends SqlSessionDaoSupport implements CityInterface {
 
 
-	public void delete(int id) {
+	public void city_delete(int id) {
 		// TODO Auto-generated method stub
 
 	}
 
-	public City queryById(int id) {
+	public City city_queryById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public void save(City u) {
+	public void city_save(City u) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void update(City u) {
+	public void city_update(City u) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public List<City> queryAll() {
+	public List<City> city_queryAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}

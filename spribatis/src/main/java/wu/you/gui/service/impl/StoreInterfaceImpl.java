@@ -10,27 +10,27 @@ import wu.you.gui.service.StoreInterface;
 public class StoreInterfaceImpl extends SqlSessionDaoSupport implements StoreInterface {
 
 
-	public void delete(int id) {
+	public void store_delete(int id) {
 		// TODO Auto-generated method stub
 
 	}
 
-	public Store queryById(int id) {
+	public Store store_queryById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public void save(Store u) {
+	public void store_save(Store u) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void update(Store u) {
+	public void store_update(Store u) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public List<Store> queryAll() {
+	public List<Store> store_queryAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}

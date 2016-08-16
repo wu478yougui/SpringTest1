@@ -5,13 +5,13 @@ import java.util.List;
 import wu.you.gui.dto.Country;
 
 public interface CountryInterface {
-public Country queryById(int id);  
+public Country country_queryById(int id);  
     
-    public void save(Country u);  
+    public void country_save(Country u);  
       
-    public void update(Country u);  
+    public void country_update(Country u);  
       
-    public void delete(int id);  
+    public void country_delete(int id);  
       
-    public List<Country> queryAll();  
+    public List<Country> country_queryAll();  
 }
