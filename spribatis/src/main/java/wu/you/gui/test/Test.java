@@ -30,10 +30,10 @@ public class Test {
     public static void main(String[] args) {
     	try {
 			setUpBeforeClass();
-//			testInsert();
+			testInsert();
 			//testQueryById();
 			//testUpdate();
-//			testDelete();
+			testDelete();
 			filmInsetTest();
 			//testQueryAll();
 		} catch (Exception e) {
