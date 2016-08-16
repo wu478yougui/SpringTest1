@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+    
+<mapper namespace="wu.you.gui.dto.*">  
+  
+   <!-- <cache />  
+      
+      <resultMap type="User" id="resultListUser">  
+        <id column="uid" property="uid" />  
+        <result column="userName" property="userName"/>  
+        <result column="password" property="password" />  
+    </resultMap> -->
+      
+    <select id="film_queryById" resultType="wu.you.gui.dto.Film" parameterType="int">  
+        SELECT * FROM Film  WHERE address_id=#{id}  
+    </select>  
+      
+    <insert id="film_save" parameterType="wu.you.gui.dto.Film" useGeneratedKeys="true" >  
+    insert into film(title,language_id) values(#{title},#{language_id})   
+    </insert>  
+      
+    <update id="film_update" parameterType="wu.you.gui.dto.Film">  
+    </update>  
+      
+    <delete id="film_delete" parameterType="int">  
+    </delete>  
+      
+    <select id="film_queryAll" resultType="wu.you.gui.dto.Film">  
+        SELECT * FROM Film  
+    </select>  
+</mapper>  

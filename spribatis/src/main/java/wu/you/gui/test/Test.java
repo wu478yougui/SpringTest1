@@ -13,10 +13,13 @@ import org.springframework.core.io.Resource;
 
 import wu.you.gui.dto.Address;
 import wu.you.gui.dto.Customer;
+import wu.you.gui.dto.Film;
 import wu.you.gui.service.AddressInterFace;
 import wu.you.gui.service.CustomerInterface;
+import wu.you.gui.service.FilmInterface;
 import wu.you.gui.service.impl.AddressInterfaceImpl;
 import wu.you.gui.service.impl.CustomerInterfaceImpl;
+import wu.you.gui.service.impl.FilmInterfaceImpl;
 
 
 
@@ -27,10 +30,11 @@ public class Test {
     public static void main(String[] args) {
     	try {
 			setUpBeforeClass();
-			testInsert();
+//			testInsert();
 			//testQueryById();
 			//testUpdate();
-			testDelete();
+//			testDelete();
+			filmInsetTest();
 			//testQueryAll();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -40,6 +44,7 @@ public class Test {
 	
     private static CustomerInterfaceImpl customer;
     private static AddressInterfaceImpl address;
+    private static FilmInterface film;
 	
 	 public static void setUpBeforeClass() throws Exception {  
 //			 Resource r = new FileSystemResource("appcon.xml");
@@ -47,13 +52,15 @@ public class Test {
 		 ApplicationContext bf= new ClassPathXmlApplicationContext("ApplicationContext.xml");
 		 		customer=(CustomerInterfaceImpl) bf.getBean("customer");  
 		        address=(AddressInterfaceImpl) bf.getBean("address");
+		        film=(FilmInterface)bf.getBean("film");
 		        System.out.println(customer);
 		        System.out.println(address);
+		        System.out.println(film);
 		 
 		 }  
 	     
 	      
-	   
+	   //查询一个
 	    public static Address testQueryById(int i){  
 	    	Address u = address.address_queryById(i);  
 	        if(u!= null){  
@@ -62,7 +69,7 @@ public class Test {
 	        return u;  
 	    }  
 	      
-	    
+	    //插入customer
 	    public static void testInsert(){  
 	            Customer u = new Customer();  
 	            
@@ -143,36 +150,44 @@ public class Test {
 	        
 	    }  
 	      
-//	   
-//	    public static void testUpdate(){  
-//	        User u = userService.queryById(3);  
-//	        u.setUserName("scott");  
-//	        u.setPassword("scott");  
-//	        userService.update(u);  
-//	        System.out.println("修改成功！");  
-//	    }  
-//	      
-//	      
-//	     
+	    
+	    public static void filmInsetTest(){
+	    	Film film1 = new Film();
+	    	
+	    	System.out.println("下面执行增强处理：");
+	    	System.out.println("请输入title： ");
+	    	Scanner ser = new Scanner(System.in);
+	    	String s= ser.nextLine();
+	    	film1.setTitle(s);
+	    	
+	    	System.out.println("请输入language_id： ");
+	    	Scanner ser1 = new Scanner(System.in);
+	    	String s1= ser.nextLine();
+	    	int i = Integer.parseInt(s1);
+	    	film1.setLanguage_id(i);
+	    	film.film_save(film1);
+	    	System.out.println("插入成功！！！！");
+	    	
+	    }
+	    
+	    //删除
 	    public static void testDelete(){  
-	    	while(true){
 	    		System.out.println("请输入要删除的 Customer 的 ID:");
 	            Scanner  sc = new Scanner(System.in);
 	            String s = sc.nextLine();
 	            int i = Integer.parseInt(s);
 	            customer.customer_delete(i);  
 	            System.out.println("删除成功！");
-	            }
 	    }  
-//	      
-//	      
-//	   
-//	    public static void testQueryAll(){  
-//	        List<User> users = address.queryAll();  
-//	        if(users != null){  
-//	            for(int i = 0; i < users.size(); i++){  
-//	                System.out.println(users.get(i));  
-//	            }  
-//	        }  
-//	    }  
+      
+	      
+	   //查询全部
+	    public static void testQueryAll(){  
+	        List<Customer> customer1 = customer.customer_queryAll();  
+	        if(customer1 != null){  
+	            for(int i = 0; i < customer1.size(); i++){  
+	                System.out.println(customer1.get(i));  
+	            }  
+	        }  
+	    }  
 }
