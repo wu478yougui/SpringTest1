@@ -30,7 +30,7 @@ public class Test {
 			testInsert();
 			//testQueryById();
 			//testUpdate();
-			//testDelete();
+			testDelete();
 			//testQueryAll();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -124,7 +124,23 @@ public class Test {
 	            u.setCreate_date(new Date());
 	            
 	            customer.customer_save(u);  
-	        System.out.println("保存成功！");  
+	            System.out.println("保存成功！");
+	            
+	            
+	            System.out.println("Before	Insert	Customer Data"+"\n"+
+	            		"已经保存的数据如下:");
+		        System.out.println("ID:"+ u.getStore_id());
+		        System.out.println("FirstName:" + u.getFirst_name());
+		        System.out.println("LastName:" + u.getLast_name());
+		        System.out.println("Email:" + u.getEmail());
+		        System.out.println("Address: 1325 Fukuyama Street");
+		        
+		        
+		        
+		        
+
+	        
+	        
 	    }  
 	      
 //	   
@@ -138,11 +154,16 @@ public class Test {
 //	      
 //	      
 //	     
-//	    public static void testDelete(){  
-//	        int id = 3;  
-//	        address.delete(id);  
-//	        System.out.println("删除成功！");
-//	    }  
+	    public static void testDelete(){  
+	    	while(true){
+	    		System.out.println("请输入要删除的 Customer 的 ID:");
+	            Scanner  sc = new Scanner(System.in);
+	            String s = sc.nextLine();
+	            int i = Integer.parseInt(s);
+	            customer.customer_delete(i);  
+	            System.out.println("删除成功！");
+	            }
+	    }  
 //	      
 //	      
 //	   

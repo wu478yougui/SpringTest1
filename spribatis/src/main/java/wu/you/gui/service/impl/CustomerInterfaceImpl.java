@@ -11,8 +11,7 @@ public class CustomerInterfaceImpl extends SqlSessionDaoSupport implements Custo
 
 
 	public void customer_delete(int id) {
-		// TODO Auto-generated method stub
-
+		this.getSqlSession().delete("customer_delete", id);
 	}
 
 	public Customer customer_queryById(int id) {
@@ -21,7 +20,7 @@ public class CustomerInterfaceImpl extends SqlSessionDaoSupport implements Custo
 	}
 
 	public void customer_save(Customer u) {
-		this.getSqlSession().insert("save", u);
+		this.getSqlSession().insert("customer_save", u);
 		
 	}
 

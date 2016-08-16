@@ -13,7 +13,7 @@
         <result column="password" property="password" />  
     </resultMap> -->
       
-    <select id="queryById" resultType="wu.you.gui.dto.Country" parameterType="int">  
+    <select id="country_queryById" resultType="wu.you.gui.dto.Country" parameterType="int">  
         SELECT  
         UID,  
         USERNAME,  
@@ -22,20 +22,20 @@
         WHERE UID = #{id}  
     </select>  
       
-    <insert id="save" parameterType="wu.you.gui.dto.Country" useGeneratedKeys="true" keyProperty="uid">  
+    <insert id="country_save" parameterType="wu.you.gui.dto.Country" useGeneratedKeys="true" keyProperty="uid">  
             insert into  
             Country(userName,password) values(#{userName},#{password})   
     </insert>  
       
-    <update id="update" parameterType="wu.you.gui.dto.Country">  
+    <update id="country_update" parameterType="wu.you.gui.dto.Country">  
         UPDATE Country SET USERNAME=#{userName},PASSWORD=#{password} WHERE UID=#{uid}  
     </update>  
       
-    <delete id="delete" parameterType="int">  
+    <delete id="country_delete" parameterType="int">  
         DELETE FROM Country WHERE UID=#{id}  
     </delete>  
       
-    <select id="queryAll" resultType="wu.you.gui.dto.Country">  
+    <select id="country_queryAll" resultType="wu.you.gui.dto.Country">  
         SELECT * FROM Country  
     </select>  
 </mapper>  

@@ -13,21 +13,22 @@
         <result column="password" property="password" />  
     </resultMap> -->
       
-    <select id="queryById" resultType="wu.you.gui.dto.Customer" parameterType="int">  
+    <select id="customer_queryById" resultType="wu.you.gui.dto.Customer" parameterType="int">  
     select first_name from customer where customer_id=#{customer_id}
     </select>  
       
-    <insert id="save" parameterType="wu.you.gui.dto.Customer" useGeneratedKeys="true" >  
+    <insert id="customer_save" parameterType="wu.you.gui.dto.Customer" useGeneratedKeys="true" >  
             insert into customer(store_id,first_name,last_name,email,address_id,create_date) values(#{store_id},#{first_name},#{last_name},#{email},#{address_id},#{create_date})   
     </insert>  
       
-    <update id="update" parameterType="wu.you.gui.dto.Customer">  
+    <update id="customer_update" parameterType="wu.you.gui.dto.Customer">  
     </update>  
       
-    <delete id="delete" parameterType="int">  
+    <delete id="customer_delete" parameterType="int">  
+    	DELETE FROM Customer WHERE customer_id=#{id}
     </delete>  
       
-    <select id="queryAll" resultType="wu.you.gui.dto.Customer">  
+    <select id="customer_queryAll" resultType="wu.you.gui.dto.Customer">  
         SELECT * FROM Customer  
     </select>  
 </mapper>  

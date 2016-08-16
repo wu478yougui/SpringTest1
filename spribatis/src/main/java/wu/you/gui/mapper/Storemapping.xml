@@ -13,7 +13,7 @@
         <result column="password" property="password" />  
     </resultMap> -->
       
-    <select id="queryById" resultType="wu.you.gui.dto.Store" parameterType="int">  
+    <select id="store_queryById" resultType="wu.you.gui.dto.Store" parameterType="int">  
         SELECT  
         UID,  
         USERNAME,  
@@ -22,20 +22,20 @@
         WHERE UID = #{id}  
     </select>  
       
-    <insert id="save" parameterType="wu.you.gui.dto.Store" useGeneratedKeys="true" keyProperty="uid">  
+    <insert id="store_save" parameterType="wu.you.gui.dto.Store" useGeneratedKeys="true" keyProperty="uid">  
             insert into  
             Store(userName,password) values(#{userName},#{password})   
     </insert>  
       
-    <update id="update" parameterType="wu.you.gui.dto.Store">  
+    <update id="store_update" parameterType="wu.you.gui.dto.Store">  
         UPDATE Store SET USERNAME=#{userName},PASSWORD=#{password} WHERE UID=#{uid}  
     </update>  
       
-    <delete id="delete" parameterType="int">  
+    <delete id="store_delete" parameterType="int">  
         DELETE FROM Store WHERE UID=#{id}  
     </delete>  
       
-    <select id="queryAll" resultType="wu.you.gui.dto.Store">  
+    <select id="store_queryAll" resultType="wu.you.gui.dto.Store">  
         SELECT * FROM Store  
     </select>  
 </mapper>  
